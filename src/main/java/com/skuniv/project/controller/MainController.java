@@ -18,7 +18,9 @@ public class MainController {
 	@Resource(name = "MainService")
 	MainService service;
 	
-	//mainÈ­¸é¿¡ ³ª¿À´Â ¸ðµç roomÀ» ÀÐ¾î¿À´Â ÇÔ¼ö
+	
+	
+	//mainÈ­ï¿½é¿¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ roomï¿½ï¿½ ï¿½Ð¾ï¿½ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½
 	@RequestMapping(value = "/roomList")
 	public ModelAndView userList(Map<String, Object> commandMap) throws Exception {
 		ModelAndView mv = new ModelAndView("jsonView");
@@ -26,7 +28,7 @@ public class MainController {
 		mv.addObject("roomList", list);
 		return mv;
 	}
-	//room_no¸¦ ÀÌ¿ëÇØ ¹æ »èÁ¦
+	//room_noï¿½ï¿½ ï¿½Ì¿ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	@RequestMapping(value = "/deleteRoom")
 	public String deleteRoom(HttpServletRequest request) throws Exception {
 		String room_no = request.getParameter("room_no");
@@ -36,7 +38,7 @@ public class MainController {
 		
 		return "main";
 	}
-	//room_no¸¦ ÀÌ¿ëÇØ ¹æ ¼öÁ¤
+	//room_noï¿½ï¿½ ï¿½Ì¿ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	@RequestMapping(value = "/updateRoom")
 	public ModelAndView updateRoom(HttpServletRequest request) throws Exception {
 		String room_no = request.getParameter("room_no");
@@ -53,7 +55,7 @@ public class MainController {
 		ModelAndView mv = new ModelAndView("jsonView");
 		return mv;
 	}
-	//¹æ¸¸µé±â
+	//ï¿½æ¸¸ï¿½ï¿½ï¿½
 	@RequestMapping(value = "/insertRoom")
 	public ModelAndView insertRoom(HttpServletRequest request) throws Exception {
 		String name = request.getParameter("name");
