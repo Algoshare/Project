@@ -85,8 +85,11 @@
 	<br>
 	<div class="wrap" align="right">
 		<p>
+		<input type="hidden" id="room_no" value='room_no'>
+		<input type="hidden" id="name" value='name'>
+		<input type="hidden" id="content" value='content'>
 			<button type="button" class="btn btn-default"
-				onclick="location.href='updateform?room_no=${detailRoomList[0].room_no}&name=${detailRoomList[0].name}&content=${detailRoomList[0].content}';">그룹
+				onclick="readRoom()">그룹
 				수정</button>
 			<button type="button" class="btn btn-danger"
 				onclick="deleteonclick('${detailRoomList[0].room_no}');">그룹

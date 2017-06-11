@@ -42,53 +42,48 @@ public class HomeController {
 	}
 	@RequestMapping(value = "/chat", method = RequestMethod.GET)
 	public String chat(Locale locale, Model model) {
-		// ����� jsp
+		// 占쏙옙占쏙옙占� jsp
 		return "socket";
 	}
 	
-	@RequestMapping(value = "/connect", method = RequestMethod.GET)
-	public void connect(Locale locale, Model model) {
-		System.out.println("in");
-		new SocketHandler();
-	}
 	@RequestMapping(value = "/code", method = RequestMethod.GET)
 	public String baekjoon(Locale locale, Model model) {
-		// ����� jsp
+		// 占쏙옙占쏙옙占� jsp
 		return "code";
 	}
 	@RequestMapping(value = "/main", method = RequestMethod.GET)
 	public String mainDisplay(Locale locale, Model model) {
-		// ����� jsp
+		// 占쏙옙占쏙옙占� jsp
 		return "main";
 	}
 	@RequestMapping(value = "/programmers", method = RequestMethod.GET)
 	public String login(Locale locale, Model model) {
-		// ∂Áøˆ¡Ÿ jsp
+		// ���첩�징타 jsp
 		return "programmers";
 	}
 	@RequestMapping(value = "/updateform", method = RequestMethod.GET)
 	public String updateform(Locale locale, Model model) {
-		// ����� jsp
+		// 占쏙옙占쏙옙占� jsp
 		return "updateform";
 	}
 	@RequestMapping(value = "/form", method = RequestMethod.GET)
 	public String form(Locale locale, Model model) {
-		// ����� jsp
+		// 占쏙옙占쏙옙占� jsp
 		return "form";
 	}
 	@RequestMapping(value = "/questionupdateform", method = RequestMethod.GET)
 	public String questionupdateform(Locale locale, Model model) {
-		// ����� jsp
+		// 占쏙옙占쏙옙占� jsp
 		return "questionupdateform";
 	}
 	@RequestMapping(value = "/questionform", method = RequestMethod.GET)
 	public String questionform(Locale locale, Model model) {
-		// ����� jsp
+		// 占쏙옙占쏙옙占� jsp
 		return "questionform";
 	}
 	@RequestMapping(value = "/detail", method = RequestMethod.GET)
 	public String detail(Locale locale, Model model) {
-		// ����� jsp
+		// 占쏙옙占쏙옙占� jsp
 		return "detail";
 	}
 }

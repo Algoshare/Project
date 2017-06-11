@@ -1,5 +1,4 @@
 //main.js
-//모든 방 리스트
 $('#tiles').html('<ul id="tiles">');
 var query = {};
 $
@@ -8,9 +7,11 @@ $
 			url : "roomList",
 			dataType : "json",
 			success : function(json) {
+				$('#tiles').empty();
 				var list = json.roomList;
 				var listLen = list.length;
 				for (var i = 0; i < listLen; i++) {
+					
 					$('#tiles')
 							.append(
 									'<li onclick="listOnClick({room_no:'
@@ -27,13 +28,15 @@ $
 											+ list[i].name
 											+ '</h3><span><a href="#"><label> </label>Algorithm</a></span><p>'
 											+ list[i].content
-											+ '</p></div></div></li></ul>');
+											+ '</p></div></div></li>');
 
 				}
-
 				$('#tiles').append('</ul>');
+	
 			}
 		});
+
+
 //방 list 중 하나를 클릭하면 실행되는 함수
 listOnClick = function(obj) {
 	location.href = "selectCertainRoom?room_no=" + obj['room_no'] + "&name=" + obj['name'] + "&content=" + obj['content'] + "&img=" + obj['img']+"";

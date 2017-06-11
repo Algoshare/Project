@@ -101,14 +101,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					</div> 
 				</div>     -->
 			<!--  -->
-			<div class="top-searchbar">
-				<form>
-					<input type="text" placeholder="입력하세요!" /><input type="submit"
-						value="" /> <input type="radio" name="chk_info" value="title"
-						checked="checked">스터디 명 <input type="radio"
-						name="chk_info" value="inner">내용
-				</form>
-			</div>
 			<div class="userinfo">
 				<div class="user">
 					<p>
@@ -136,7 +128,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!----wookmark-scripts---->
 	<script src="resources/common/hyo/js/jquery.imagesloaded.js"></script>
 	<script src="resources/common/hyo/js/jquery.wookmark.js"></script>
-	<script src="resources/common/hyo/js/main.js?ver=2 charset='utf-8'"></script>
+	<script src="resources/common/hyo/js/main.js?ver=3 charset='utf-8'"></script>
 	<script type="text/javascript">
 		(function($) {
 			var $tiles = $('#tiles'), $handler = $('li', $tiles), $main = $('#main'), $window = $(window), $document = $(document), options = {

@@ -20,13 +20,11 @@ okonclick = function() {
 
 //문제만들기 함수
 questionokonclick = function(no) {
-	alert("여기 question onclick!");
 	var input_name = $('#name').val();
 	var input_content = $('#content').val().replace(/\n/g, "<br>");
 	var input_in = $('#input').val().replace(/\n/g, "<br>");
 	var input_out = $('#output').val().replace(/\n/g, "<br>");
 	var input_due = $('#due').val();
-	alert(input_content);
 	var query = {
 			room_no : no,
 			q_name : input_name,
@@ -86,7 +84,7 @@ questionupdateonclick = function(no) {
 	$
 			.ajax({
 				type : "GET",
-				url : "updateQuestion",
+				url : "updateupQuestion",
 				data : query,
 				dataType : "json",
 				success : function(json) {
