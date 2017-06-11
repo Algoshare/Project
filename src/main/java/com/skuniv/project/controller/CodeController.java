@@ -41,7 +41,8 @@ public class CodeController {
 		//코드 db에 넣기
 		@RequestMapping(value = "/insertCode")
 		public ModelAndView insertCode(HttpServletRequest request) throws Exception {
-			String c_name = request.getParameter("c_name");
+//			String c_name = request.getParameter("c_name");
+			String c_name = "HyoJung";
 			String c_content = request.getParameter("c_content");
 			String q_no = request.getParameter("q_no");
 			String givedate   = new java.text.SimpleDateFormat("yyyy-MM-dd").format(new java.util.Date());

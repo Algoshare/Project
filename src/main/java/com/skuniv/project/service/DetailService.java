@@ -3,6 +3,7 @@ package com.skuniv.project.service;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -68,5 +69,20 @@ public class DetailService {
 	}
 	public void updateQuestion(Map<String, Object> map) {
 		dao.updateQuestion(map);
+	}
+	public LinkedHashMap<String, Object> setURLEncoding(LinkedHashMap<String, Object> map) {
+		
+		try { 
+			map.put("q_no", URLEncoder.encode(map.get("q_no").toString(), "UTF-8"));
+			map.put("q_name", URLEncoder.encode(map.get("q_name").toString(), "UTF-8"));
+			map.put("q_content", URLEncoder.encode(map.get("q_content").toString(), "UTF-8"));
+			map.put("due", URLEncoder.encode(map.get("due").toString(), "UTF-8"));
+			map.put("room_no", URLEncoder.encode(map.get("room_no").toString(), "UTF-8"));
+			map.put("input", URLEncoder.encode(map.get("input").toString(), "UTF-8"));
+			map.put("output", URLEncoder.encode(map.get("output").toString(), "UTF-8"));
+		}catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+		return map;
 	}
 }

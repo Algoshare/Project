@@ -56,11 +56,7 @@ public class HomeController {
 		// 占쏙옙占쏙옙占� jsp
 		return "main";
 	}
-	@RequestMapping(value = "/programmers", method = RequestMethod.GET)
-	public String login(Locale locale, Model model) {
-		// ���첩�징타 jsp
-		return "programmers";
-	}
+	
 	@RequestMapping(value = "/updateform", method = RequestMethod.GET)
 	public String updateform(Locale locale, Model model) {
 		// 占쏙옙占쏙옙占� jsp
