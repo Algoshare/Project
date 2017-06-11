@@ -55,3 +55,25 @@ questionlistOnClick = function(obj) {
 	location.href = "selectCertainQuestion?q_no=" + obj['q_no'] + "&q_name=" + obj['q_name'] + "&q_content=" + obj['q_content'] + "&due=" + obj['due']+"&input=" + obj['input']+"&output=" + obj['output']+"&room_no=" + obj['room_no']+"";
 }
 
+readRoom = function(){
+	var input_no = $('#room_no').val();
+	var input_name = $('#name').val();
+	var input_content = $('#content').val();
+	var query = {
+			room_no : input_no,
+			name : input_name,
+			content : input_content
+	};
+	$
+			.ajax({
+				type : "GET",
+				url : "readRoom",
+				data : query,
+				dataType : "json",
+				success : function(json) {
+					location.reload();
+				}
+			});	
+	
+}
+

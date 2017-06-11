@@ -75,7 +75,7 @@
 		<br> <br> <br> <br>
 		<div class="col-sm-10">
 			<button class="btn btn-primary"
-				onclick="questionupdateonclick('${updateQuestion[0].no}');">수정</button>
+				onclick="questionupdateonclick('${updateQuestion[0].q_no}');">수정</button>
 			<button type="reset" class="btn btn-default">취소</button>
 		</div>
 	</div>

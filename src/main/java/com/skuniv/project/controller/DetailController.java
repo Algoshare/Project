@@ -23,8 +23,8 @@ public class DetailController {
 	DetailService service;
 
 	//문제 수정페이지에서 확인 버튼을 눌렀을 때 호출
-	@RequestMapping(value = "/updateQuestion")
-	public ModelAndView updateRoom(HttpServletRequest request) throws Exception {
+	@RequestMapping(value = "/updateupQuestion")
+	public ModelAndView updateupQuestion(HttpServletRequest request) throws Exception {
 		String q_no = request.getParameter("q_no");
 		String q_name = request.getParameter("q_name");
 		String q_content = request.getParameter("q_content");
@@ -47,7 +47,7 @@ public class DetailController {
 
 	//detail페이지에서 room_no를 사용하여 문제의 list를 가져오는 함수
 	@RequestMapping(value = "/questionList")
-	public ModelAndView userList(HttpServletRequest request, Map<String, Object> commandMap) throws Exception {
+	public ModelAndView questionList(HttpServletRequest request, Map<String, Object> commandMap) throws Exception {
 		ModelAndView mv = new ModelAndView("jsonView");
 		List<Map<String, Object>> list = service.selectQuestionList(request.getParameter("room_no"));
 		mv.addObject("questionList", list);

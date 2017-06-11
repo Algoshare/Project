@@ -3,8 +3,10 @@
 //$('#tiles').append('<li><img src="resources/common/hyo/images/tmon.png"></li>');
 //alert($('#main').html());
 //main.js
+
 //모든 방 리스트
 //$('#tiles').html('<ul id="tiles">');
+
 
 var query = {};
 $
@@ -13,8 +15,10 @@ $
 			url : "roomList",
 			dataType : "json",
 			success : function(json) {
+				$('#tiles').empty();
 				var list = json.roomList;
 				var listLen = list.length;
+
 				$("#tiles").empty();
 					for (var i = 0; i < listLen; i++) {
 						var text = '<li onclick="listOnClick({room_no:'+ list[i].room_no
@@ -55,8 +59,11 @@ $
 						}
 						applyLayout();
 					})(jQuery);				
+
 			}
 		});
+
+
 //방 list 중 하나를 클릭하면 실행되는 함수
 listOnClick = function(obj) {
 	location.href = "selectCertainRoom?room_no=" + obj['room_no'] + "&name=" + obj['name'] + "&content=" + obj['content'] + "&img=" + obj['img']+"";

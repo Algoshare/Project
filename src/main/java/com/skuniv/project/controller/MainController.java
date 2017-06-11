@@ -1,6 +1,8 @@
 package com.skuniv.project.controller;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -20,7 +22,7 @@ public class MainController {
 	
 	
 	
-	//mainȭ�鿡 ������ ��� room�� �о���� �Լ�
+	//main화占썽에 占쏙옙占쏙옙占쏙옙 占쏙옙占� room占쏙옙 占싻억옙占쏙옙占� 占쌉쇽옙
 	@RequestMapping(value = "/roomList")
 	public ModelAndView userList(Map<String, Object> commandMap) throws Exception {
 		ModelAndView mv = new ModelAndView("jsonView");
@@ -28,7 +30,7 @@ public class MainController {
 		mv.addObject("roomList", list);
 		return mv;
 	}
-	//room_no�� �̿��� �� ����
+	//room_no占쏙옙 占싱울옙占쏙옙 占쏙옙 占쏙옙占쏙옙
 	@RequestMapping(value = "/deleteRoom")
 	public String deleteRoom(HttpServletRequest request) throws Exception {
 		String room_no = request.getParameter("room_no");
@@ -38,7 +40,7 @@ public class MainController {
 		
 		return "main";
 	}
-	//room_no�� �̿��� �� ����
+	//room_no占쏙옙 占싱울옙占쏙옙 占쏙옙 占쏙옙占쏙옙
 	@RequestMapping(value = "/updateRoom")
 	public ModelAndView updateRoom(HttpServletRequest request) throws Exception {
 		String room_no = request.getParameter("room_no");
@@ -55,7 +57,7 @@ public class MainController {
 		ModelAndView mv = new ModelAndView("jsonView");
 		return mv;
 	}
-	//�游���
+	//占썸만占쏙옙占�
 	@RequestMapping(value = "/insertRoom")
 	public ModelAndView insertRoom(HttpServletRequest request) throws Exception {
 		String name = request.getParameter("name");
@@ -70,6 +72,24 @@ public class MainController {
 		service.insertRoom(map);
 		
 		ModelAndView mv = new ModelAndView("jsonView");
+		return mv;
+	}
+	
+	@RequestMapping(value = "/readRoom")
+	public ModelAndView readRoom(HttpServletRequest request, Map<String, Object> commandMap)
+			throws Exception {
+		ModelAndView mv = new ModelAndView("updateform");
+		String room_no = request.getParameter("room_no");
+		String name = request.getParameter("name");
+		String content = request.getParameter("content");
+		List<LinkedHashMap<String, Object>> list = new LinkedList<LinkedHashMap<String, Object>>();
+		LinkedHashMap<String, Object> map = new LinkedHashMap<String, Object>();
+		
+		map.put("name", name);
+		map.put("content", content);
+		map.put("room_no", room_no);
+		list.add(map);
+		mv.addObject("detailRList", list);
 		return mv;
 	}
 }

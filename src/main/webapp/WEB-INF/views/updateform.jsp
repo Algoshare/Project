@@ -35,11 +35,6 @@
 <script src="resources/common/hyo/js/jquery.min.js"></script>
 </head>
 <body>
-	<%
-		String room_no = request.getParameter("room_no");
-		String name = request.getParameter("name");
-		String content = request.getParameter("content");
-	%>
 	<div class="header">
 		<div class="wrap">
 			<div class="logo">
@@ -61,7 +56,7 @@
 
 		<div class="col-xs-7">
 			<input type="text" size="10" class="form-control" id="name"
-				align="center" value="<%=name%>">
+				align="center" value='$detailRList[0].name'>
 		</div>
 		<br>
 		<br>
@@ -69,7 +64,7 @@
 		<br>
 		<div class="col-xs-7">
 			<input type="text" class="form-control" id="content"
-				value="<%=content%>">
+				value='$detailRList[0].content'>
 		</div>
 		<br>
 		<br>
@@ -82,7 +77,7 @@
 		<br> <br> <br> <br>
 		<div class="col-sm-10">
 			<button class="btn btn-primary"
-				onclick="updateonclick(<%=room_no%>);">확인</button>
+				onclick="updateonclick($detailRList[0].room_no);">확인</button>
 			<button type="reset" class="btn btn-default">취소</button>
 		</div>
 	</div>
