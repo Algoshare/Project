@@ -5,12 +5,15 @@ deleteonclick = function(no) {
 
 //room_no를 이용해서 그 방의 문제 list를 출력
 $('#questions').html('<table id="questions"><tr class="active"><th>#</th><th>문제 이름</th><th>문제 마감일</th></tr>');
-var query = {};
-var room_no = $('#no').val();
+var no = $('#no').val();
+var query = {
+	room_no : no	
+};
 $
 		.ajax({
 			type : "GET",
-			url : "questionList?room_no="+room_no,
+			url : "questionList",
+			data : query,
 			dataType : "json",
 			success : function(json) {
 				var list = json.questionList;
@@ -48,6 +51,7 @@ $
 
 //문제 클릭시 그 값을 detail페이지로 뿌리는 함수
 questionlistOnClick = function(obj) {
+	
 	location.href = "selectCertainQuestion?q_no=" + obj['q_no'] + "&q_name=" + obj['q_name'] + "&q_content=" + obj['q_content'] + "&due=" + obj['due']+"&input=" + obj['input']+"&output=" + obj['output']+"&room_no=" + obj['room_no']+"";
 }
 

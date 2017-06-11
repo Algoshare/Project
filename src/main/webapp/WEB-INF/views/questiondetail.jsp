@@ -17,7 +17,9 @@
 <script type="application/x-javascript">
 	
 	
+	
 	 addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
+
 
 
 </script>
@@ -78,19 +80,29 @@
 			<br> <br> ${detailQuestionList[0].due}
 		</div>
 		<br> <br> <br> <br>
-		<div class="wrap" align="right">
-			<p>
-
-				<button type="button" class="btn btn-default"
-					onclick="location.href='questionupdateform?room_no=${detailQuestionList[0].room_no}&q_name=${detailQuestionList[0].q_name}&q_content=${detailQuestionList[0].q_content}&input=${detailQuestionList[0].input}&output=${detailQuestionList[0].output}&due=${detailQuestionList[0].due}&q_no=${detailQuestionList[0].q_no}';">문제
-					수정</button>
+		</div>
+		<div align="right">
+			<form action="/project/updateQuestion" method="POST">
+				<input type="hidden" name="room_no"
+					value="${detailQuestionList[0].room_no}"> <input
+					type="hidden" name="q_content" value='${detailQuestionList[0].q_content}'>
+				<input type="hidden" name="q_name"
+					value="${detailQuestionList[0].q_name}"> <input
+					type="hidden" name="due" value="${detailQuestionList[0].due}">
+				<input type="hidden" name="input"
+					value="${detailQuestionList[0].input}"> <input
+					type="hidden" name="output" value="${detailQuestionList[0].output}">
+				<input type="hidden" name="q_no"
+					value="${detailQuestionList[0].q_no}"> <input type="submit"
+					class="btn btn-default" value="문제 수정">
 				<button type="button" class="btn btn-danger"
 					onclick="deletequestiononclick('${detailQuestionList[0].q_no}');">문제
 					삭제</button>
-			</p>
+			</form>
+
 			<br> <br> <br>
 		</div>
-	</div>
+	
 	<input type="hidden" id="no" value="${detailQuestionList[0].q_no}">
 	<div class="wrap">
 		<div class="wrap">

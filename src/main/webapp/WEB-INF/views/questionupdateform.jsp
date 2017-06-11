@@ -31,18 +31,7 @@
 <script src="resources/common/hyo/js/jquery.min.js"></script>
 </head>
 <body>
-	<%
-		String q_no = request.getParameter("q_no");
-		String room_no = request.getParameter("room_no");
-		String q_name = request.getParameter("q_name");
-		String q_content = request.getParameter("q_content");
-		String input = request.getParameter("input");
-		String output = request.getParameter("output");
-		String due = request.getParameter("due");
-		q_content = q_content.replaceAll("<br>", "\r\n");
-		input = input.replaceAll("<br>", "\r\n");
-		output = output.replaceAll("<br>", "\r\n");
-	%>
+	
 	<div class="header">
 		<div class="wrap">
 			<div class="logo">
@@ -62,31 +51,31 @@
 			<h1>&nbsp;Question Update</h1>
 		</div>
 		<div class="col-xs-7">
-			<input type="text" class="form-control" id="name" value="<%=q_name%>"><br>
+			<input type="text" class="form-control" id="name" value='${updateQuestion[0].q_name}'><br>
 		</div>
 		<br> <br> <br> <br>
 		<div class="col-xs-7">
-			<textarea class="form-control" rows="7" id="content"><%=q_content%></textarea>
+			<textarea class="form-control" rows="7" id="content">'${updateQuestion[0].q_content}'</textarea>
 			<br>
 		</div>
 		<br> <br> <br> <br>
 		<div class="col-xs-7">
-			<textarea class="form-control" rows="4" id="input"><%=input%></textarea>
+			<textarea class="form-control" rows="4" id="input">'${updateQuestion[0].input}'</textarea>
 			<br>
 		</div>
 		<br> <br> <br> <br>
 		<div class="col-xs-7">
-			<textarea class="form-control" rows="4" id="output"><%=output%></textarea>
+			<textarea class="form-control" rows="4" id="output">'${updateQuestion[0].output}'</textarea>
 		</div>
 		<br> <br> <br> <br>
 		<div class="col-xs-3">
 			<label for="exampleInputPassword1">마감 기한</label> <input type="date"
-				class="form-control" id="due" value="<%=due%>"><br>
+				class="form-control" id="due" value='${updateQuestion[0].due}'><br>
 		</div>
 		<br> <br> <br> <br>
 		<div class="col-sm-10">
 			<button class="btn btn-primary"
-				onclick="questionupdateonclick(<%=q_no%>);">수정</button>
+				onclick="questionupdateonclick('${updateQuestion[0].no}');">수정</button>
 			<button type="reset" class="btn btn-default">취소</button>
 		</div>
 	</div>
