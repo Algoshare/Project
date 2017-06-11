@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="detail">
+	<select id="selectQuestionList" resultType="hashmap" parameterType="String">
+		<![CDATA[
+			SELECT
+			    *
+			FROM
+			   algorithm
+			WHERE
+				room_no=#{room_no}
+		]]>
+	</select>
+	
+	<insert id="insertQuestion" parameterType="hashmap">
+		<![CDATA[
+			INSERT
+				INTO algorithm(
+			    	q_name,
+			    	q_content,
+			    	due,
+			    	room_no,
+			    	input,
+			    	output
+			    	)
+				VALUES(
+			    	#{q_name},
+			    	#{q_content},
+			    	#{due},
+			    	#{room_no},
+			    	#{input},
+			    	#{output}
+   			    )
+		]]>
+	</insert>
+	
+	<delete id="deleteQuestion" parameterType="hashmap">
+		<![CDATA[
+			DELETE FROM
+				algorithm
+			WHERE
+				q_no=#{q_no}
+		]]>
+	</delete>
+	<update id="updateQuestion" parameterType="hashmap">
+		<![CDATA[
+			UPDATE
+				algorithm
+			SET
+				q_name=#{q_name},
+				q_content=#{q_content},
+				due=#{due},
+				input=#{input},
+				output=#{output}
+				
+			WHERE
+				q_no=#{q_no}
+		]]>
+	</update>
+</mapper>

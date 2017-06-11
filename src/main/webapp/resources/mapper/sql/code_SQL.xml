@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="code">
+	
+	<select id="selectCodeList" resultType="hashmap" parameterType="String">
+		<![CDATA[
+			SELECT
+			    *
+			FROM
+			   code
+			WHERE
+				q_no=#{q_no}
+		]]>
+	</select>
+	<select id="selectCommentList" resultType="hashmap" parameterType="String">
+		<![CDATA[
+			SELECT
+			    *
+			FROM
+			   comment
+			WHERE
+				code_no=#{code_no}
+		]]>
+	</select>
+	<insert id="insertCode" parameterType="hashmap">
+		<![CDATA[
+			INSERT
+				INTO code(
+			    	c_name,
+			    	c_content,
+			    	q_no,
+			    	givedate
+			    	)
+				VALUES(
+			    	#{c_name},
+			    	#{c_content},
+			    	#{q_no},
+			    	#{givedate}
+   			    )
+		]]>
+	</insert>
+	<insert id="insertComment" parameterType="hashmap">
+		<![CDATA[
+			INSERT
+				INTO comment(
+			    	comment_name,
+			    	comment,
+			    	code_no
+			    	)
+				VALUES(
+			    	#{comment_name},
+			    	#{comment},
+			    	#{code_no}
+   			    )
+		]]>
+	</insert>
+</mapper>

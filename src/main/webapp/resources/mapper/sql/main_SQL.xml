@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="main">
+	
+	<select id="selectRoomList" resultType="hashmap">
+		<![CDATA[
+			SELECT
+			    *
+			FROM
+			   room
+		]]>
+	</select>
+	
+	<insert id="insertRoom" parameterType="hashmap">
+		<![CDATA[
+			INSERT
+				INTO room(
+			    	name,
+			    	content,
+			    	img
+			    	)
+				VALUES(
+			    	#{name},
+			    	#{content},
+			    	#{img}
+   			    )
+		]]>
+	</insert>	
+	
+	<delete id="deleteRoom" parameterType="hashmap">
+		<![CDATA[
+			DELETE FROM
+				room
+			WHERE
+				room_no=#{room_no}
+		]]>
+	</delete>
+	<update id="updateRoom" parameterType="hashmap">
+		<![CDATA[
+			UPDATE
+				room
+			SET
+				name=#{name},
+				content=#{content}
+				
+			WHERE
+				room_no=#{room_no}
+		]]>
+	</update>
+	
+</mapper>
