@@ -54,14 +54,14 @@ public class SocketHandler extends TextWebSocketHandler implements InitializingB
                     WebSocketMessage<?> message) throws Exception {
              super.handleMessage(session, message);
              
-             this.logger.info("receive message:"+message.toString());
-             
-             String sendMsg =  service.selectCode();
-             sendMsg += "\n" + message.getPayload();
-             Map<String, Object> map = new HashMap<String, Object>();
-             map.put("content", sendMsg);
-             service.updateCode(map);
-             sendMessage ("re : " + sendMsg);
+//             this.logger.info("receive message:"+message.toString());
+//             
+//             String sendMsg =  service.selectCode();
+//             sendMsg += "\n" + message.getPayload();
+//             Map<String, Object> map = new HashMap<String, Object>();
+//             map.put("content", sendMsg);
+//             service.updateCode(map);
+//             sendMessage ("re : " + sendMsg);
        }
  
        @Override
