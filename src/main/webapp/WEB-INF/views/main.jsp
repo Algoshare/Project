@@ -127,8 +127,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<script src="resources/common/hyo/js/jquery.imagesloaded.js"></script>
 	<script src="resources/common/hyo/js/jquery.wookmark.js"></script>
 
-
-
 	<script src="resources/common/hyo/js/main.js?ver=1 charset='utf-8'"></script>
 
 	<script type="text/javascript">

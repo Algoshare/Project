@@ -20,6 +20,7 @@ $
 				var list = json.questionList;
 				var listLen = list.length;
 				for (var i = 0; i < listLen; i++) {
+
 					var re = list[i].q_content.replace(/"/gi, '&quot;');
 					re = re.replace(/\0/gi, '&nbsp;');
 					re = re.replace(/\t/gi, '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
@@ -47,6 +48,8 @@ $
 		                                 + list[i].due
 		                                 + '</td></tr></table>');
 
+
+
 		            }
 				
 				$('#questions').append('</table>');
@@ -55,7 +58,7 @@ $
 
 //문제 클릭시 그 값을 detail페이지로 뿌리는 함수
 questionlistOnClick = function(obj) {
-	alert(obj['q_content']);
+	alert(obj['q_content'])
 	location.href = "selectCertainQuestion?q_no=" + obj['q_no'] + "&q_name=" + obj['q_name'] + "&q_content=" + obj['q_content'] + "&due=" + obj['due']+"&input=" + obj['input']+"&output=" + obj['output']+"&room_no=" + obj['room_no']+"";
 }
 
