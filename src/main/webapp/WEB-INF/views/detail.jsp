@@ -116,7 +116,7 @@
 	</div>
 	<script src="resources/common/hyo/js/jquery.imagesloaded.js"></script>
 	<script src="resources/common/hyo/js/jquery.wookmark.js"></script>
-	<script src="resources/common/hyo/js/detail.js?ver=1 charset='utf-8'"></script>
+	<script src="resources/common/hyo/js/detail.js?ver=2 charset='utf-8'"></script>
 	<script type="text/javascript">
 		(function($) {
 			var $certain = $('#certain'), $handler = $('li', $certain), $main = $('#main'), $window = $(window), $document = $(document), options = {

@@ -274,16 +274,13 @@
 						onkeyup="Hera.challengeAlgorithmCodes.resizeEditor(this);"
 						style="height: calc(60% - 7px);">
 						<div class="editor">
-							<textarea hidden="" id="code" name="code" style="display: none;">
-public class Solution {
-	public static void main(String args[]) {
-	
-	}
-}</textarea>
+							<textarea hidden="" id="code" name="code" >
+// 이곳에 코딩하시고 저장버튼 클릭 후 제출하시면 됩니다.
+//저장하시려면 Ctrl + S 를 누르세요.</textarea>
 							<div class="CodeMirror cm-s-grepp CodeMirror-wrap">
-								<div
+								<div id="test"
 									style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 274px; left: 186px;">
-									<textarea autocorrect="off" autocapitalize="off"
+									<textarea id ="coding" autocorrect="off" autocapitalize="off"
 										spellcheck="false"
 										style="position: absolute; padding: 0px; width: 1000px; height: 1em; outline: none;"
 										tabindex="0"></textarea>
@@ -300,33 +297,7 @@ public class Solution {
 									<div class="CodeMirror-sizer"
 										style="margin-left: 48px; margin-bottom: -10px; border-right-width: 20px; min-height: 359px; padding-right: 0px; padding-bottom: 0px;">
 										<div style="position: relative; top: 0px;">
-											<div class="CodeMirror-lines">
-												<div style="position: relative; outline: none;">
-													<div class="CodeMirror-measure">
-														<pre>x</pre>
-													</div>
-													<div class="CodeMirror-measure"></div>
-													<div style="position: relative; z-index: 1;"></div>
-													<div class="CodeMirror-cursors">
-														<div class="CodeMirror-cursor"
-															style="left: 138px; top: 270px; height: 27px;">&nbsp;</div>
-													</div>
-													<div class="CodeMirror-code">
-														<div style="position: relative;" class="">
-															<div class="CodeMirror-gutter-wrapper"
-																style="left: -48px;">
-																<div class="CodeMirror-linenumber CodeMirror-gutter-elt"
-																	style="left: 0px; width: 21px;">1</div>
-															</div>
-															<pre class=" CodeMirror-line ">
-																<span style="padding-right: 0.1px;"><span
-																	class="cm-variable"></span></span>
-															</pre>
-														</div>
-														
-													</div>
-												</div>
-											</div>
+											
 										</div>
 									</div>
 									<div
@@ -347,8 +318,7 @@ public class Solution {
 						<div class="console tab-content">
 							<div id="output" class="console-output tab-pane fade in active">
 								<pre class="console-content">
-									<div></div>
-									<div class="console-heading">코드를 저장 하였습니다.</div>
+									
 								</pre>
 							</div>
 						</div>
@@ -359,13 +329,19 @@ public class Solution {
 				<div class="testcase-button">
 				</div>
 				<div class="func-buttons">
-					 <a id=""
+					 <a id="run-code"
+						class="btn btn-dark" data-trigger="hover"
+						data-toggle="popover" data-placement="top"
+						data-content="저장하시려면 Ctrl+s를 누르거나 버튼을 클릭하세요~"
+						onclick="saveOnclick();"
+						data-original-title="" title="">저장</a>
+
+					 <a id="submit-code"
 						class="btn btn-dark-teal" data-trigger="hover"
 						data-toggle="popover" data-placement="top"
 						data-content="제출하시면 기록이 됩니다."
-						onclick="submitOnclick();"
+						onclick="submitOnclick('${q_no}');"
 						data-original-title="" title="">제출</a>
-
 
 				</div>
 			</div>
@@ -399,9 +375,9 @@ public class Solution {
     </script>
 
 	<script
-		src="resources/common/program_files/application-0907e1e09d1c1249f269db1c8ff2cd3c7951dcb45cffd243d85e6140c5f97269.js"></script>
+		src="resources/common/program_files/application-0907e1e09d1c1249f269db1c8ff2cd3c7951dcb45cffd243d85e6140c5f97269.js?ver=1"></script>
 <script
-		src="resources/common/program_files/programmers.js?ver=1 charset='utf-8'"></script>
+		src="resources/common/program_files/programmers.js?ver=2 charset='utf-8'"></script>
 	<script src="resources/common/program_files/all.js"
 		type="text/javascript">
     cloudinary.setCloudName('eightcruz');
@@ -422,10 +398,10 @@ public class Solution {
 
 
 
-	<noscript>이 사이트의 기능을 모두 활용하기 위해서는 자바스크립트를 활성화 시킬 필요가 있습니다.
+<!-- 	<noscript>이 사이트의 기능을 모두 활용하기 위해서는 자바스크립트를 활성화 시킬 필요가 있습니다.
 		&lt;a href="http://www.enable-javascript.com/ko/" target="_blank"&gt;
 		브라우저에서 자바스크립트를 활성화하는 방법&lt;/a&gt;을 참고 하세요.</noscript>
-
+ -->
 
 
 </body>

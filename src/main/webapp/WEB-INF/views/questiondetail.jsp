@@ -114,7 +114,7 @@
 		<div class="wrap" align="right">
 			<p>
 				<button type="button" class="btn btn-primary"
-					onclick="location.href='code?q_no=${detailQuestionList[0].q_no}';">코드
+					onclick="location.href='programmers?q_no=${detailQuestionList[0].q_no}';">코드
 					제출</button>
 			</p>
 			<br> <br> <br>

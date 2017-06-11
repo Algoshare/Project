@@ -26,21 +26,7 @@ $
 					re = re.replace(/\t/gi, '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
 		               $('#questions')
 		                     .append(
-		                           '<tr onclick="questionlistOnClick({q_no:'
-		                                 + list[i].q_no
-		                                 + ',q_name:\''
-		                                 + list[i].q_name
-		                                 + '\',q_content:\''
-		                                 + re
-		                                 + '\',due:\''
-		                                 + list[i].due
-		                                 + '\',input:\''
-		                                 + list[i].input
-		                                 + '\',output:\''
-		                                 + list[i].output
-		                                 + '\',room_no:\''
-		                                 + list[i].room_no
-		                                 + '\'});"><td>'
+		                           '<tr onclick="questionlistOnClick('+list[i].q_no+');"><td>'
 		                                 + (i+1)
 		                                 + '</td><td>'
 		                                 + list[i].q_name
@@ -57,9 +43,11 @@ $
 		});
 
 //문제 클릭시 그 값을 detail페이지로 뿌리는 함수
-questionlistOnClick = function(obj) {
-	alert(obj['q_content'])
-	location.href = "selectCertainQuestion?q_no=" + obj['q_no'] + "&q_name=" + obj['q_name'] + "&q_content=" + obj['q_content'] + "&due=" + obj['due']+"&input=" + obj['input']+"&output=" + obj['output']+"&room_no=" + obj['room_no']+"";
+questionlistOnClick = function(no) {
+//	alert(obj['q_content'])
+	var text = "selectCertainQuestion?q_no=" + no;
+//	text = encodeURI(text);
+	location.href = "" + text;
 }
 
 readRoom = function(){
