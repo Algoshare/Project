@@ -9,9 +9,9 @@
 		class="org.springframework.jdbc.datasource.SimpleDriverDataSource">
 		<property name="driverClass" value="com.mysql.jdbc.Driver" />
 		<property name="url"
-			value="jdbc:mysql://root.ciesutepj7im.ap-northeast-2.rds.amazonaws.com:3306/algoshare?characterEncoding=utf8" />
+			value="jdbc:mysql://localhost:3306/algoshare?characterEncoding=utf8" />
 		<property name="username" value="root" />
-		<property name="password" value="12345678" />
+		<property name="password" value="1234" />
 	</bean>
 
 	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionFactoryBean">

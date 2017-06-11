@@ -24,8 +24,8 @@
 <meta name="csrf-param" content="authenticity_token">
 <meta name="csrf-token"
 	content="MDo2L9h7RI+U0c33Ytlbh8cDMr6POy9oP438ddl2qHgW3JQX4EAKwLslPxy8SrMCwlXa68CVVCXbW51tirgrjw==">
-<meta name="action-cable-url"
-	content="wss://programmers.co.kr:8080/cable">
+<!--<meta name="action-cable-url"
+	content="wss://programmers.co.kr:8080/cable">-->
 <script async="" src="resources/common/program_files/analytics.js"></script>
 <script src="resources/common/hyo/js/jquery.min.js"></script>
 <script>
@@ -179,8 +179,7 @@
 				<a onclick="Hera.challengeAlgorithmCodes.changeChallenge(3,1209)">
 					<div class="algorithm-panel">
 						<svg id="checkbox-316" class="outline-box">
-							<use
-								xlink:href="/assets/svg-defs-330007873bdebbab70ce8904174d09b1bfffc387ef82bc013c3eb92e5e361317.svg#ic-check-box"></use></svg>
+							</svg>
 						<div class="info">
 							<div class="title">문제 1</div>
 							
