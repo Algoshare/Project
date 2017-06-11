@@ -52,6 +52,8 @@ public class DetailService {
 	public void insertQuestion(Map<String, Object> map) {
 		String q_content = map.get("q_content").toString();
 		q_content = q_content.replaceAll(" ", "&nbsp;");
+		q_content = q_content.replaceAll("\t", "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+		q_content = q_content.replaceAll("'", "\\\\'");
 		try {
 			q_content = URLEncoder.encode(q_content, "UTF-8");
 		}catch (UnsupportedEncodingException u) {
