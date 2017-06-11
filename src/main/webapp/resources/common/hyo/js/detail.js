@@ -25,8 +25,8 @@ $
 											+ list[i].q_no
 											+ ',q_name:\''
 											+ list[i].q_name
-											+ '\',q_content:\''
-											+ list[i].q_content
+											+ '\',q_content:\'&quot;&#34;&#39;'
+//											+ list[i].q_content
 											+ '\',due:\''
 											+ list[i].due
 											+ '\',input:\''
@@ -51,7 +51,7 @@ $
 
 //문제 클릭시 그 값을 detail페이지로 뿌리는 함수
 questionlistOnClick = function(obj) {
-	
+	alert(obj['q_content'])
 	location.href = "selectCertainQuestion?q_no=" + obj['q_no'] + "&q_name=" + obj['q_name'] + "&q_content=" + obj['q_content'] + "&due=" + obj['due']+"&input=" + obj['input']+"&output=" + obj['output']+"&room_no=" + obj['room_no']+"";
 }
 
