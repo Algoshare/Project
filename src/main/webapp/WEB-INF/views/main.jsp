@@ -123,12 +123,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 	<!---//End-header---->
 	<!---start-content---->
-	<div class="content">
+	<div id='content' class="content">
 		<div class="wrap">
 			<div id="main" role="main">
-				<ul id="tiles">
-
-				</ul>
+				<ul id="tiles"></ul>
 			</div>
 		</div>
 	</div>
@@ -136,9 +134,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!----wookmark-scripts---->
 	<script src="resources/common/hyo/js/jquery.imagesloaded.js"></script>
 	<script src="resources/common/hyo/js/jquery.wookmark.js"></script>
-	<script src="resources/common/hyo/js/main.js?ver=2 charset='utf-8'"></script>
+	<script src="resources/common/hyo/js/main.js?ver=1 charset='utf-8'"></script>
 	<script type="text/javascript">
-		(function($) {
+		/* (function($) {
 			var $tiles = $('#tiles'), $handler = $('li', $tiles), $main = $('#main'), $window = $(window), $document = $(document), options = {
 				autoResize : true, // This will auto-update the layout when the browser window is resized.
 				container : $main, // Optional, used for some extra CSS styling
@@ -159,7 +157,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				});
 			}
 			applyLayout();
-		})(jQuery);
+		})(jQuery); */
 	</script>
 	<!----//wookmark-scripts---->
 	<!----start-footer--->
