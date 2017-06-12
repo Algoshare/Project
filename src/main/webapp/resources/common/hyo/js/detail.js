@@ -48,10 +48,12 @@ questionlistOnClick = function(no) {
 	var text = "selectCertainQuestion?q_no=" + no;
 //	text = encodeURI(text);
 	location.href = "" + text;
-}
+};
 
 readRoom = function(){
+	
 	var input_no = $('#room_no').val();
+	alert(input_no)
 	var input_name = $('#name').val();
 	var input_content = $('#content').val();
 	var query = {
@@ -66,7 +68,7 @@ readRoom = function(){
 				data : query,
 				dataType : "json",
 				success : function(json) {
-					location.reload();
+//					location.reload();
 				}
 			});	
 	

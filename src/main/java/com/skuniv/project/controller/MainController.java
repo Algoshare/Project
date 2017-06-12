@@ -68,15 +68,15 @@ public class MainController {
 	//
 	@RequestMapping(value = "/insertRoom", method=RequestMethod.POST)
 	public ModelAndView insertRoom(MultipartHttpServletRequest request) throws IllegalStateException, IOException  {
-		String name = request.getParameter("name");
-		String content = request.getParameter("content");
-		
+		request.setCharacterEncoding("utf-8");
+		String name = new String(request.getParameter("name").getBytes("8859_1"), "UTF-8");
+		String content = new String(request.getParameter("content").getBytes("8859_1"), "UTF-8");;
 		Map<String, MultipartFile> files = request.getFileMap();
 		CommonsMultipartFile cmf = (CommonsMultipartFile) files.get("img");
 		// 경로
 		String pdfPath = request.getSession().getServletContext().getRealPath("/resources");
 		System.out.println("pdf : " + pdfPath);
-		String savePath = ""+pdfPath+"/common/hyo/images/"+cmf.getOriginalFilename();
+		String savePath = ""+pdfPath+"/common/hyo/images/"+new String(cmf.getOriginalFilename().getBytes("8859_1"), "UTF-8");;
 		System.out.println("저장 경로 : " +savePath);
 		File file = new File(savePath);
 		// 파일 업로드 처리 완료.
@@ -101,9 +101,9 @@ public class MainController {
 		String room_no = request.getParameter("room_no");
 		String name = request.getParameter("name");
 		String content = request.getParameter("content");
+		System.out.println("room_no : " + room_no + ", " + name + " , " + content);
 		List<LinkedHashMap<String, Object>> list = new LinkedList<LinkedHashMap<String, Object>>();
 		LinkedHashMap<String, Object> map = new LinkedHashMap<String, Object>();
-		
 		map.put("name", name);
 		map.put("content", content);
 		map.put("room_no", room_no);
