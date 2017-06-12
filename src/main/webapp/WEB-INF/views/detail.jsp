@@ -84,7 +84,7 @@
  -->
 	<br>
 	<div class="wrap" align="right">
-		<form action="/project/readRoom" method="GET">
+		<form action="readRoom" method="GET">
 		<p>
 		<input type="hidden" name ="room_no" id="room_no" value='${detailRoomList[0].room_no}'>
 		<input type="hidden" id="name" name= "name" value='${detailRoomList[0].name}'>
