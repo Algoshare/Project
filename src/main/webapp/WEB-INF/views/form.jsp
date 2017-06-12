@@ -53,9 +53,10 @@
 		<div class="page-header">
 			<h1>&nbsp;Group Detail</h1>
 		</div>
+		<form id="insertForm" method="post" action="insertRoom" enctype="multipart/form-data">
 
 		<div class="col-xs-7">
-			<input type="text" size="10" class="form-control" id="name"
+			<input type="text" size="10" class="form-control" id="name" name="name"
 				placeholder="그룹 이름을 입력하세요" align="center"">
 		</div>
 		<br>
@@ -63,7 +64,7 @@
 		<br>
 		<br>
 		<div class="col-xs-7">
-			<input type="text" class="form-control" id="content"
+			<input type="text" class="form-control" id="content" name="content"
 				placeholder="그룹에 대한 설명을 입력하세요">
 		</div>
 		<br>
@@ -72,13 +73,14 @@
 		<br>
 		<div class="col-sm-10">
 			<label for="exampleInputFile">대표 이미지 업로드</label> <input type="file"
-				id="img">
+				id="img" name="img">
 		</div>
 		<br> <br> <br> <br>
 		<div class="col-sm-10">
-			<button class="btn btn-primary" onclick="okonclick();">확인</button>
+			<button class="btn btn-primary">확인</button>
 			<button type="reset" class="btn btn-default">취소</button>
 		</div>
+	</form>
 	</div>
 </body>
 

@@ -70,6 +70,13 @@ public class DetailService {
 	public void updateQuestion(Map<String, Object> map) {
 		dao.updateQuestion(map);
 	}
+	
+	//select certain room
+	public List<Map<String, Object>> selectCertainRoom(String room_no) throws Exception {
+		return dao.selectCertainRoom(room_no);
+	}
+	
+	
 	public LinkedHashMap<String, Object> setURLEncoding(LinkedHashMap<String, Object> map) {
 		
 		try { 

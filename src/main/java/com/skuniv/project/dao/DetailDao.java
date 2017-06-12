@@ -13,6 +13,9 @@ public class DetailDao extends abDAO{
 	public List<Map<String, Object>> selectQuestionList(String room_no) {
 		return (List<Map<String, Object>>) selectList("detail.selectQuestionList", room_no);
 	}
+	public List<Map<String, Object>> selectCertainRoom(String room_no) throws Exception {
+		return (List<Map<String, Object>>) selectList("detail.selectCertainRoom", room_no);
+	}
 	public void insertQuestion(Map<String, Object> map) {
 		insert("detail.insertQuestion", map);
 	}

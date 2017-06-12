@@ -1,5 +1,7 @@
 package com.skuniv.project.controller;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
@@ -10,7 +12,13 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.skuniv.project.service.MainService;
@@ -57,21 +65,32 @@ public class MainController {
 		ModelAndView mv = new ModelAndView("jsonView");
 		return mv;
 	}
-	//占썸만占쏙옙占�
-	@RequestMapping(value = "/insertRoom")
-	public ModelAndView insertRoom(HttpServletRequest request) throws Exception {
+	//
+	@RequestMapping(value = "/insertRoom", method=RequestMethod.POST)
+	public ModelAndView insertRoom(MultipartHttpServletRequest request) throws IllegalStateException, IOException  {
 		String name = request.getParameter("name");
 		String content = request.getParameter("content");
-//		String img = request.getParameter("img");
-		String img = "alg.png";
+		
+		Map<String, MultipartFile> files = request.getFileMap();
+		CommonsMultipartFile cmf = (CommonsMultipartFile) files.get("img");
+		// 경로
+		String pdfPath = request.getSession().getServletContext().getRealPath("/resources");
+		System.out.println("pdf : " + pdfPath);
+		String savePath = ""+pdfPath+"/common/hyo/images/"+cmf.getOriginalFilename();
+		System.out.println("저장 경로 : " +savePath);
+		File file = new File(savePath);
+		// 파일 업로드 처리 완료.
+		cmf.transferTo(file);
+
+//		String img = "alg.png";
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("name", name);
 		map.put("content", content);
-		map.put("img", img);
+		map.put("img", cmf.getOriginalFilename());
 		
 		service.insertRoom(map);
 		
-		ModelAndView mv = new ModelAndView("jsonView");
+		ModelAndView mv = new ModelAndView("main");
 		return mv;
 	}
 	

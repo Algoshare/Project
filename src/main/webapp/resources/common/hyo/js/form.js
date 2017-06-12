@@ -1,22 +1,27 @@
-//방만들기 함수
-okonclick = function() {
-	var input_name = $('#name').val();
-	var input_content = $('#content').val();
-	var query = {
-			name : input_name,
-			content : input_content
-	};
-	$
-			.ajax({
-				type : "GET",
-				url : "insertRoom",
-				data : query,
-				dataType : "json",
-				success : function(json) {
-					location.href="main";
-				}
-			});	
-}
+////방만들기 함수
+//$('#insertForm').submit(function(e) {
+//	var input_name = $('#name').val();
+//	var input_content = $('#content').val();
+//	alert($('#img')[0].files[0]);
+//	var query = {
+//			name : input_name,
+//			content : input_content,
+//			img : $("#img")[0].files[0]
+//	};
+//	$
+//			.ajax({
+//				type : "POST",
+//				url : "insertRoom",
+//				data : query,
+//				dataType : "json",
+//				mimeType : "multipart/form-data",
+//				processData: false, 
+//				contentType: false,
+//				success : function(json) {
+//					location.href="main";
+//				}
+//			});	
+//});
 
 //문제만들기 함수
 questionokonclick = function(no) {
@@ -40,7 +45,7 @@ questionokonclick = function(no) {
 				data : query,
 				dataType : "json",
 				success : function(json) {
-					location.href="main";
+					location.href="selectCertainRoom?room_no="+no;
 				}
 			});	
 }
