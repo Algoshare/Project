@@ -24,7 +24,7 @@ public class DetailController {
 	DetailService service;
 	@Resource(name = "AlgorithmService")
 	AlgorithmService algoService;
-	//¹®Á¦ ¼öÁ¤ÆäÀÌÁö¿¡¼­ È®ÀÎ ¹öÆ°À» ´­·¶À» ¶§ È£Ãâ
+	//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½ ï¿½ï¿½Æ°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ È£ï¿½ï¿½
 	@RequestMapping(value = "/updateupQuestion")
 	public ModelAndView updateupQuestion(HttpServletRequest request) throws Exception {
 		String q_no = request.getParameter("q_no");
@@ -47,7 +47,7 @@ public class DetailController {
 		return mv;
 	}
 
-	//detailÆäÀÌÁö¿¡¼­ room_no¸¦ »ç¿ëÇÏ¿© ¹®Á¦ÀÇ list¸¦ °¡Á®¿À´Â ÇÔ¼ö
+	//detailï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ room_noï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ listï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½
 	@RequestMapping(value = "/questionList")
 	public ModelAndView questionList(HttpServletRequest request, Map<String, Object> commandMap) throws Exception {
 		ModelAndView mv = new ModelAndView("jsonView");
@@ -56,7 +56,7 @@ public class DetailController {
 		return mv;
 	}
 
-	//q_no¸¦ »ç¿ëÇÏ¿© ¹®Á¦ »èÁ¦
+	//q_noï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	@RequestMapping(value = "/deleteQuestion")
 	public String deleteQuestion(HttpServletRequest request) throws Exception {
 		String q_no = request.getParameter("q_no");
@@ -67,25 +67,19 @@ public class DetailController {
 		return "main";
 	}
 
-	//mainÈ­¸é¿¡¼­ Å¬¸¯ÇÏ¿© detailÆäÀÌÁö·Î °¥ ¶§ »ç¿ëµÇ´Â ÇÔ¼ö
+	//
 	@RequestMapping(value = "/selectCertainRoom")
 	public ModelAndView selectCertainRoom(HttpServletRequest request, Map<String, Object> commandMap) throws Exception {
 		String room_no = request.getParameter("room_no");
-		String name = request.getParameter("name");
-		String content = request.getParameter("content");
-		String img = request.getParameter("img");
+//		String name = request.getParameter("name");
+//		String content = request.getParameter("content");
+//		String img = request.getParameter("img");
 		ModelAndView mv = new ModelAndView("detail");
-		List<LinkedHashMap<String, Object>> list = new LinkedList<LinkedHashMap<String, Object>>();
-		LinkedHashMap<String, Object> map = new LinkedHashMap<String, Object>();
-		map.put("room_no", room_no);
-		map.put("name", name);
-		map.put("content", content);
-		map.put("img", img);
-		list.add(map);
+		List<Map<String, Object>> list = service.selectCertainRoom(room_no);
 		mv.addObject("detailRoomList", list);
 		return mv;
 	}
-	//¹®Á¦list¿¡¼­ ÇÏ³ª¸¦ Å¬¸¯ÇÏ¸é ³ª¿À´Â questiondetailÆäÀÌÁö¿¡¼­ »ç¿ëÇÏ´Â °ªµé
+	//ï¿½ï¿½ï¿½ï¿½listï¿½ï¿½ï¿½ï¿½ ï¿½Ï³ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½Ï¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ questiondetailï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½
 	@RequestMapping(value = "/selectCertainQuestion")
 	public ModelAndView selectCertainQuestion(HttpServletRequest request, Map<String, Object> commandMap)
 			throws Exception {
@@ -112,7 +106,7 @@ public class DetailController {
 		return mv;
 	}
 
-	//¹®Á¦ Ãß°¡
+	//ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½
 	@RequestMapping(value = "/insertQuestion")
 	public ModelAndView insertQuestion(HttpServletRequest request) throws Exception {
 		String q_name = request.getParameter("q_name");

@@ -66,5 +66,5 @@ $
 
 //방 list 중 하나를 클릭하면 실행되는 함수
 listOnClick = function(obj) {
-	location.href = "selectCertainRoom?room_no=" + obj['room_no'] + "&name=" + obj['name'] + "&content=" + obj['content'] + "&img=" + obj['img']+"";
+	location.href = "selectCertainRoom?room_no=" + obj['room_no'];
 }

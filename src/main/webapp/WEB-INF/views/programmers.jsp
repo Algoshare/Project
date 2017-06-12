@@ -225,12 +225,12 @@
 				<div class="guide-section" id="tour2"
 					style="width: calc(40% - 12px);">
 					<div class="markdown">
-						<p>구구단을 출력하는 문제입니다.</p>
+						<p>${algo_list[0].q_name}</p>
 
 						<h5>제한사항</h5>
 
 						<ul>
-							<li>N값은 100 이하의 자연수</li>
+							<li>${algo_list[0].q_content}</li>
 						</ul>
 
 						<hr>
@@ -239,24 +239,18 @@
 						<table class="table">
 							<thead>
 								<tr>
-									<th>N</th>
-									<th>Result</th>
+									<th>입력</th>
+									<th>출력</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
-									<td>5</td>
-									<td>5 * 1 = 5<br/>5 * 2 = 10<br/>5 * 3 = 15<br/>5 * 4 = 20<br/>5 * 5 = 25<br/>5 * 6 = 30<br/>5 * 7 = 35<br/>
-									5 * 8 = 40<br/>5 * 9 = 45<br/></td>
-								</tr>
-								<tr>
-									<td>9</td>
-									<td>9 * 1 = 9<br/>9 * 2 = 18<br/>9 * 3 = 27<br/>9 * 4 = 36<br/>9 * 5 = 45<br/>9 * 6 = 54<br/>9 * 7 = 63<br/>
-									9 * 8 = 72<br/>9 * 9 = 81<br/></td>
+									<td>${algo_list[0].input}</td>
+									<td>${algo_list[0].output}</td>
 								</tr>
 							</tbody>
 						</table>
-						<h5>입출력 예 설명</h5>
+<!-- 						<h5>입출력 예 설명</h5>
 
 						<p>
 							입출력 예 #1<br> 주어진 N의 수가 5일 때, 구구단 중 5단을 출력합니다.
@@ -264,7 +258,7 @@
 
 						<p>
 							입출력 예 #2<br> 주어진 N의 수가 9일 때, 구구단 중 9단을 출력합니다.
-						</p>
+						</p> -->
 					</div>
 				</div>
 				<div class="gutter gutter-horizontal"
@@ -340,7 +334,7 @@
 						class="btn btn-dark-teal" data-trigger="hover"
 						data-toggle="popover" data-placement="top"
 						data-content="제출하시면 기록이 됩니다."
-						onclick="submitOnclick('${q_no}');"
+						onclick="submitOnclick('${algo_list[0].q_no}');"
 						data-original-title="" title="">제출</a>
 
 				</div>
